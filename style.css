@@ -1,0 +1,32 @@
+img{
+  height:auto;
+  width:auto;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+#options{
+  border: 1px;
+  border-style: dashed;
+  border-color: green;
+}
+
+.rock{
+  padding: 10px;
+}
+
+.paper{
+  padding: 10px;
+}
+
+.scissors{
+  padding: 10px;
+}
+
+#rules{
+  text-align: center;
+}
+
+.resultTXT{
+  text-align: center;
+}
