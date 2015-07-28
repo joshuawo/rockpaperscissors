@@ -1,32 +1,157 @@
-img{
+* {
+  font-family: "Impact";
+  /*color: #ED1F2B;*/
+  color: white;
+
+}
+
+.welcome{
+  padding-top: 10%;
+}
+
+.weapon{
   height:auto;
   width:auto;
-  max-width: 200px;
   max-height: 200px;
+  padding: 10px
 }
 
-#options{
-  border: 1px;
-  border-style: dashed;
-  border-color: green;
+img{
+  padding: 10px
 }
 
-.rock{
-  padding: 10px;
+.btn {
+  max-width: 200px;
 }
 
-.paper{
-  padding: 10px;
+button{
+  background-color: white;
 }
 
-.scissors{
-  padding: 10px;
-}
-
-#rules{
+.vs{
   text-align: center;
 }
 
-.resultTXT{
+#welcome_screen{
+  background: url(images/IMG_0062.PNG) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 600px;
+}
+
+#choosechar_screen{
+  background: url(images/IMG_0064.PNG) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#opponent_screen{
+  background: url(images/IMG_0069.PNG) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#selection_screen {
+  background: url(images/IMG_0067.PNG) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#result_screen{
+  background: url(images/IMG_0068.PNG) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#scoreboard_screen{
+  background: url(images/IMG_0063.PNG) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#win{
+  color: #ED1F2B;
+  font-weight: bold;
+  text-shadow: -2px 2px black;
+
+}
+#loss{
+  color: #ED1F2B;
+  font-weight: bold;
+  text-shadow: -2px 2px black;
+}
+#tie{
+  color: #ED1F2B;
+  font-weight: bold;
+  text-shadow: -2px 2px black;
+}
+.result_box{
+    background-color: white;
+    /*border-color: #ED1F2B;*/
+    width:25%;
+    border: solid 4px #ED1F2B;
+    outline: solid 2px black;
+}
+
+.select_help{
+  padding-top: 10px;
+  text-align: center;
+}
+
+.score_help{
+  padding-top: 10px;
+  text-align: center;
+}
+
+.rock {
+  padding: 10px;
+}
+
+.paper {
+  padding: 10px;
+}
+
+.scissors {
+  padding: 10px;
+}
+
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
+
+#rules {
+  text-align: center;
+}
+
+.resultTXT {
+  text-align: center;
+}
+
+.result {
+  text-align: center;
+}
+
+.win {
+  text-align: center;
+}
+
+.loss {
+  text-align: center;
+}
+
+.tie {
   text-align: center;
 }

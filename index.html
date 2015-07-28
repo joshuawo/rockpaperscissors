@@ -7,106 +7,153 @@
     <link href="style.css" rel="stylesheet">
   </head>
   <body>
-    <div class="container row center-block">
-        <div id="header" class="col-md-12">
-          <img class="center-block" src = "http://media.giphy.com/media/14ty7Uk1T7jo5O/giphy.gif">
+    <div class="container-fluid row center-block">
+
+        <!-- WELCOME SCREEN -->
+        <div id="welcome_screen" class="col-md-12">
+          <div class="row welcome">
+            <div class="col-md-3"></div>
+            <div class="col-md-6 center-block"><img class="img-responsive" src="images/rps.png">
+              <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4 center-block "><a href=# id="startBtn"><img class="btn img-responsive" src="images/start.png"></a></div>
+                <div class="col-md-4"></div>
+              </div>
+            </div>
+            <div class="col-md-3"></div>
+          </div>
         </div>
-        <div id="rules" class="col-md-12">
-          <p>Welcome to</p>
-          <h3>| Rock | Paper | Scissors |</h3>
-          <p>Select your weapon of choice to play!</p>
-        </div>
+
+        <!-- CHOOSE CHARACTER SCREEN -->
+        <div id="choosechar_screen" class="col-md-12">
+          <div class="row">
+            <div class="col-md-3"></div>
+            <img id="rps_welcome" class="center-block col-md-6 img-responsive" src="images/choose_char.png">
+            <div class="col-md-3"></div>
+          </div>
           <div id="options" class="row">
-            <div class="rock col-md-4">
-              <img class="rock center-block" src="http://img2.wikia.nocookie.net/__cb20141120133208/epicrapbattlesofhistory/images/4/4b/A_Rock!.gif">
-              <button type="button" id="rockBtn" class="btn btn-primary btn-lg center-block active">Rock</button>
+            <div class="col-md-1"></div>
+            <div id= "play1" class="player col-md-2"></div>
+            <div id= "play2" class="player col-md-2"></div>
+            <div id= "play3" class="player col-md-2"></div>
+            <div id= "play4" class="player col-md-2"></div>
+            <div id= "play5" class="player col-md-2"></div>
+            <div class="col-md-1"></div>
+          </div>
+        </div>
+
+        <!-- INPUT NAME SCREEN -->
+        <!-- <div id="name_screen" class="col-md-12">
+          <input class="center-block">
+        </div> -->
+
+        <!-- OPPONENT SCREEN -->
+        <div id="opponent_screen" class="col-md-12">
+          <div class="row">
+            <div class="col-md-3"></div>
+            <img id="rps_welcome" class="center-block col-md-6 img-responsive" src="images/choose_opp.png">
+            <div class="col-md-3"></div>
+          </div>
+          <div id="options" class="row">
+            <div id= "opponent1" class="col-md-3"></div>
+            <div id= "opponent2" class="col-md-3"></div>
+            <div id= "opponent3" class="col-md-3"></div>
+            <div id= "opponent4" class="col-md-3"></div>
+          </div>
+        </div>
+
+        <!-- SELECT ROCK PAPER SCISSORS SCREEN -->
+        <div id="selection_screen" class="col-md-12">
+            <div class="row">
+              <div class="col-md-3"></div>
+              <img id="rps_welcome" class="center-block col-md-6 img-responsive" src="images/choose_weapon.png">
+              <div class="col-md-3"></div>
             </div>
-            <div class="paper col-md-4">
-              <img class="paper center-block" src="http://web.yourlastdesire.com/wp-content/uploads/2014/05/paperball.jpg">
-              <button type="button" id="paperBtn" class="btn btn-primary btn-lg center-block active">Paper</button>
+            <div id="options" class="row">
+              <div class="rock col-md-4">
+                <img class="rock weapon center-block" src="images/rock.png">
+                <div class="row">
+                  <a href=# id="rockBtn" class="col-md-12"><img class="center-block img-responsive" src="images/rock_btn.png"></a>
+                </div>
+              </div>
+              <div class="paper col-md-4">
+                <img class="paper weapon center-block" src="images/paper.png">
+                <div class="row">
+                  <a href=# id="paperBtn" class="col-md-12"><img class="center-block img-responsive" src="images/paper_btn.png"></a>
+                </div>
+              </div>
+              <div class="scissors col-md-4">
+                <img class="scissors weapon center-block" src="images/scissors.png">
+                <div class="row">
+                  <a href=# id="scissorsBtn" class="col-md-12"><img class="center-block img-responsive" src="images/scissors_btn.png"></a>
+                </div>
+              </div>
             </div>
-            <div class="scissors col-md-4">
-              <img class="scissors center-block" src="http://abitribeca.com/wp-content/uploads/2013/12/Barber_scissors_nyc.jpg">
-              <button type="button" id="scissorsBtn" class="btn btn-primary btn-lg center-block active">Scissors</button>
+            <div id = "select_vs" class="row">
+              <div class="col-md-2"></div>
+              <div id="playVS" class="col-md-3"></div>
+              <div id ="vs" class="col-md-2 center-block"><img class="center-block img-responsive" src="images/vs.png"></div>
+              <div id ="oppVS" class="col-md-3"></div>
+              <div class="col-md-2"></div>
+            </div>
+        </div>
+
+        <!-- RESULTS SCREEN -->
+        <div id="result_screen" class="col-md-12">
+            <span class = "result"></span>
+        <!-- </div> -->
+
+        <!-- SCOREBOARD SCREEN -->
+        <!-- <div id="scoreboard_screen" class="col-md-12"> -->
+          <!-- <div class="row">
+            <div class="col-md-3"></div>
+            <img id="rps_welcome" class="center-block col-md-6" src="images/scoreboard.png">
+            <div class="col-md-3"></div>
+          </div> -->
+          <!-- Display Score  -->
+          <div id="score" class="row">
+            <div class="win col-md-4">
+              <div class="row">
+                <div class='col-md-4'></div>
+                <img class="center-block col-md-4" src="images/win_btn.png">
+                <div class='col-md-4'></div>
+              </div>
+              <div class="result_box center-block"><span id="win"></span></div>
+            </div>
+            <div class="loss col-md-4">
+              <div class="row">
+                <div class='col-md-4'></div>
+                <img class="center-block col-md-4" src="images/loss_btn.png">
+                <div class='col-md-4'></div>
+              </div>
+              <div class="result_box center-block"><span id="loss"></span></div>
+            </div>
+            <div class="tie col-md-4">
+              <div class="row">
+                <div class='col-md-4'></div>
+                <img class="center-block col-md-4" src="images/tie_btn.png">
+                <div class='col-md-4'></div>
+              </div>
+              <div class="result_box center-block"><span id="tie"></span></div>
             </div>
           </div>
-        <div id="result" class="col-md-12"></div>
+          <!-- Provide Buttons to Play Again or Reset -->
+          <div id = "play_reset_buttons">
+            <div class="row">
+              <div class="col-md-3"></div>
+              <a href=# id="playAgainBtn" class="col-md-3"><img class="center-block" src="images/play_again_btn.png"></a>
+              <a href=# id="resetBtn" class="col-md-3"><img class="center-block" src="images/new_character_btn.png"></a>
+              <div class="col-md-3"></div>
+            </div>
+          </div>
+          <!-- <div id = "play_reset_buttons">
+            <button type="button" id="resetBtn" class="btn btn-primary btn-lg center-block active">SELECT NEW CHARACTER</button>
+          </div> -->
+        </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script>
-    // var input;
-    //
-    // while(!((input=prompt("Choose R, P or S")) === "R" || input === "P" || input === "S" || input ===  "r" || input === "p" || input === "s")){
-    //
-    //   console.log("Please Choose R, P or S")
-    // }
-    var choice;
-    var comp= Math.random()*10
-    // r = 0-3.5  p= 3.6-6.5  s = 6.6-10
-
-    // Rock
-    //   choice = 3.5
-    // Paper
-    //   choice = 6.5
-    // Scissors
-    //   choice = 9.9
-
-    var result = function(choice,comp){
-       var result=""
-       if (choice === 3.5 && comp <= 3.5){
-          result="Both Rock! It's a tie"
-          // result.addClass(".tie")
-       }
-       else if (choice === 3.5 && comp <= 6.5){
-          result="Rock loses to paper! Sorry!"
-          // result.addClass(".lose")
-       }
-       else if (choice === 3.5 && comp <= 10){
-          result="Rock beats scissors! You Win!"
-          // result.addClass(".win")
-        }
-        else if(choice === 6.5 && comp <= 3.5){
-          result="Paper beats rock! You Win!"
-          // result.addClass(".win")
-        }
-        else if (choice === 6.5 && comp <= 6.5){
-          result="Both Paper! It's a tie"
-          // result.addClass(".tie")
-        }
-        else if (choice === 6.5 && comp <= 10){
-          result="Paper loses Scissors! Sorry!"
-          // result.addClass(".lose")
-        }
-        else if(choice === 9.9 && comp <= 3.5){
-          result="Scissors loses to rock! Sorry!"
-          // result.addClass(".lose")
-        }
-        else if (choice === 9.9 && comp <= 6.5){
-          result="Scissors beats paper! You Win!"
-          // result.addClass(".win")
-        }
-        else{
-          result="Both Scissors! You tie!"
-          // result.addClass(".tie")
-        }
-        $('#result').append('<p class=" resultTXT center-block">' + result + '</p>')
-     }
-
-
-     $('#rockBtn').on('click', function(){
-       choice=3.5
-       result(choice,comp)
-
-     })
-     $('#paperBtn').on('click', function(){
-       choice=6.5
-       result(choice,comp)
-     })
-     $('#scissorsBtn').on('click', function(){
-       choice=9.0
-       result(choice,comp)
-     })
-    </script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="players.js"></script>
+    <script type="text/javascript" src="app.js"></script>
   </body>
 </html>
