@@ -1,15 +1,14 @@
 var choice, computer_play, tie = 0, win = 0, loss = 0, result_picture
 
-
+//start the game on document load and every screen except the welcome screen
 $(document).ready(function(){
   initializeScore();
   initializeCharacters();
-  // $('#welcome_screen').hide()
   $('#choosechar_screen').hide()
   $('#opponent_screen').hide()
   $('#selection_screen ').hide()
   $('#result_screen').hide()
-  // $('#scoreboard_screen').hide()
+
 })
 // set the value for the computer player
 var playComputer = function(){
@@ -56,21 +55,24 @@ var result = function(choice,computer_play){
     $('.result').html(result+'<div class="result_pic center-block"><img id="result_pic" class="img-rounded" src="'+result_picture+'"></div>')
  }
 
+//loop through each character in the array
+//if the character is selected, check if the variable passed is a win,loss or tie
+//set the value of the variable result picture to a random gif stored in the character's win, loss or tie array of gif at random
 var resultPic = function(result_str){
   players.forEach(function(character){
     if (character.user_selected && result_str === "win"){
-      console.log(win, character.win[ranPic()])
       result_picture = character.win[ranPic()]
     } else if (character.user_selected && result_str === "loss"){
-      console.log(loss, character.loss[ranPic()])
       result_picture = character.loss[ranPic()]
     } else if (character.user_selected && result_str === "tie"){
-      console.log(tie, character.tie[ranPic()])
       result_picture = character.tie[ranPic()]
     }
   })
 }
+
 // update scoreboard
+// update win, loss or tie count based on results
+// update win, loss, tie counts in html by referencing ids 
 var updateScore = function(result){
   if (result === "win"){
     win++
@@ -84,6 +86,8 @@ var updateScore = function(result){
   $('#tie').html('<h2 class ="center-block">' + tie + '</h2>')
 }
 
+//(re)set the values of win, loss and tie counts to 0
+// update win, loss, tie counts in html by referencing ids 
 var initializeScore = function(){
   win=0
   loss=0
@@ -108,7 +112,7 @@ var initializeCharacters = function(){
   })
 }
 
-// if the character wasn't selected by the user load them as an opponent
+// if the character wasn't selected by the user on the character selection screen, show them as an opponent option
 var initializeOpponents = function(){
   var num = 1
   players.forEach(function(character){
@@ -126,6 +130,8 @@ var initializeOpponents = function(){
   })
 }
 
+//Run through the array of players and if the character was selected by the user as their player or the opponent 
+//load their picture and name in the html of the divs with ids playVS and oppVS
 var initializeVS = function(){
   players.forEach(function(character){
     if (character.user_selected)
@@ -138,30 +144,13 @@ var initializeVS = function(){
       }
   })
 }
-// Populate Choices
-// var popChoices = function(){
-//   $('#options').fadeIn()
-//   '<div class="rock col-md-4">
-//     <img class="rock center-block" src="http://img2.wikia.nocookie.net/__cb20141120133208/epicrapbattlesofhistory/images/4/4b/A_Rock!.gif">
-//     <button type="button" id="rockBtn" class="btn btn-primary btn-lg center-block active">Rock</button>
-//   </div>
-//   <div class="paper col-md-4">
-//     <img class="paper center-block" src="http://web.yourlastdesire.com/wp-content/uploads/2014/05/paperball.jpg">
-//     <button type="button" id="paperBtn" class="btn btn-primary btn-lg center-block active">Paper</button>
-//   </div>
-//   <div class="scissors col-md-4">
-//     <img class="scissors center-block" src="http://abitribeca.com/wp-content/uploads/2013/12/Barber_scissors_nyc.jpg">
-//     <button type="button" id="scissorsBtn" class="btn btn-primary btn-lg center-block active">Scissors</button>
-//   </div>'
-// }
 
-// Event Handlers
-// registers a players character selection
-// Notes
-// $('body').on('click', 'check where click originated', function(){
-// })
+// EVENT HANDLERS
+
+// registers a player's personal character selection on click
+// initialize opponents based on the characters who were not selected
+// hide the character selection screen and shows opponent selection screen div
 $('body').on('click', '.char_select_btn', function(){
-  // what can you use this for?
   var clickid = this.id
   players.forEach(function(character){
     for(var trait in character){
@@ -175,8 +164,10 @@ $('body').on('click', '.char_select_btn', function(){
   $('#opponent_screen').show()
 })
 
+// registers a player's opponent selection on click
+// initialize vs screen based on the characters that were selected
+// hides opponent selection screen div and shows the rock paper scissors selection screen div
 $('body').on('click', '.opp_select_btn', function(){
-  // what can you use this for?
   var clickid = this.id
   players.forEach(function(character){
       if(character.opp_id === clickid){
@@ -187,33 +178,40 @@ $('body').on('click', '.opp_select_btn', function(){
   $('#opponent_screen').hide()
   $('#selection_screen ').show()
 })
-// registers player's choice based on button click
+
+// registers player's choice of rock based on button click
+// hides selection screen div and shows the results screen div
  $('#rockBtn').on('click', function(){
    choice="rock"
    computer_play = playComputer()
    result(choice,computer_play)
    $('#selection_screen ').hide()
    $('#result_screen').show()
-  //  $('#scoreboard_screen').show()
 
  })
+ 
+ // registers player's choice of paper based on button click
+ // hides selection screen div and shows the results screen div
  $('#paperBtn').on('click', function(){
    choice="paper"
    computer_play = playComputer()
    result(choice,computer_play)
    $('#selection_screen ').hide()
    $('#result_screen').show()
-  //  $('#scoreboard_screen').show()
  })
+ 
+ // registers player's choice of scissors based on button click
+ // hides selection screen div and shows the results screen div
  $('#scissorsBtn').on('click', function(){
    choice="scissors"
    computer_play = playComputer()
    result(choice,computer_play)
    $('#selection_screen ').hide()
    $('#result_screen').show()
-  //  $('#scoreboard_screen').show()
  })
 
+// on click the reset button resets all of the characters to false and all of the counts to zero
+// it hides the results screen div and shows the choose character screen div
  $('#resetBtn').on('click', function(){
    choice=""
    tie = 0
@@ -229,18 +227,18 @@ $('body').on('click', '.opp_select_btn', function(){
    $('#win').html('<h2 class ="center-block">' + win + '</h2>')
    $('#loss').html('<h2 class ="center-block">' + loss + '</h2>')
    $('#tie').html('<h2 class ="center-block">' + tie + '</h2>')
-  //  $('#scoreboard_screen').hide()
    initializeCharacters()
    $('#result_screen').hide()
    $('#choosechar_screen').show()
  })
 
+// on click the play again button will hide the results screen and show the selection screen
  $('#playAgainBtn').on('click', function(){
    $('#result_screen').hide()
-  //  $('#scoreboard_screen').hide()
    $('#selection_screen ').show()
  })
 
+// on click the start button will hide the welcome screen and show the character selection screen div
  $('#startBtn').on('click', function(){
    $('#welcome_screen').hide()
    $('#choosechar_screen').show()
