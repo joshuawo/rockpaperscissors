@@ -1,35 +1,16 @@
+  /*Red Color: #ED1F2B;*/
 * {
   font-family: "Impact";
-  /*color: #ED1F2B;*/
   color: white;
 
-}
-
-.welcome{
-  padding-top: 10%;
-}
-
-.weapon{
-  height:auto;
-  width:auto;
-  max-height: 200px;
-  padding: 10px
 }
 
 img{
   padding: 10px
 }
 
-.btn {
-  max-width: 200px;
-}
-
 button{
   background-color: white;
-}
-
-.vs{
-  text-align: center;
 }
 
 #welcome_screen{
@@ -87,16 +68,42 @@ button{
   text-shadow: -2px 2px black;
 
 }
+
 #loss{
   color: #ED1F2B;
   font-weight: bold;
   text-shadow: -2px 2px black;
 }
+
 #tie{
   color: #ED1F2B;
   font-weight: bold;
   text-shadow: -2px 2px black;
 }
+
+#rules {
+  text-align: center;
+}
+
+.welcome{
+  padding-top: 10%;
+}
+
+.weapon{
+  height:auto;
+  width:auto;
+  max-height: 200px;
+  padding: 10px
+}
+
+.btn {
+  max-width: 200px;
+}
+
+.vs{
+  text-align: center;
+}
+
 .result_box{
     background-color: white;
     /*border-color: #ED1F2B;*/
@@ -130,10 +137,6 @@ button{
 .vertical-align {
     display: flex;
     align-items: center;
-}
-
-#rules {
-  text-align: center;
 }
 
 .resultTXT {
